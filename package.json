@@ -1,0 +1,19 @@
+{
+  "name": "a03-zheyuhuang",
+  "version": "1.0.0",
+  "description": "Assignment 3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comp426-2022-spring/a03-ZheyuHuang.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/comp426-2022-spring/a03-ZheyuHuang/issues"
+  },
+  "homepage": "https://github.com/comp426-2022-spring/a03-ZheyuHuang#readme"
+}
