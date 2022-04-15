@@ -57,15 +57,14 @@ app.get("/app/", (req, res) => {
   res.end(res.statusCode + " " + res.statusMessage);
 });
 
-// app.get("/app/flip", (req, res) => {
-    
-//   res.status(200).json({ message: req.params.number });
-// });
-
 app.get("/app/flip", (req, res) => {
     var flipVar = coinFlip()
     res.status(200).json({ 'flip' : flipVar });
   })
+
+app.get("/app/flips/:number", (req, res) => {
+  res.status(200).json({ "raw": coinFlips(req.params.number) });
+});
 
   // Define default endpoint
 // Default response for any other request
