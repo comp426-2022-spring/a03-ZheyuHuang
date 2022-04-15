@@ -41,7 +41,7 @@ function flipACoin(call1) {
   }
 
 // Start an app server
-var HTTP_PORT = 3000;
+var HTTP_PORT = 5000;
 const server = app.listen(HTTP_PORT, () => {
   console.log("App listening on port %PORT%".replace("%PORT%", HTTP_PORT));
 });
