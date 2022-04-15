@@ -3,6 +3,8 @@ const express = require("express");
 //const req = require("express/lib/request");
 //const res = require("express/lib/response");
 const app = express();
+const args = require('minimist')(process.argv.slice(2))
+const port = args.port || 5000
 
 // Copy functions from A2
 
@@ -41,9 +43,8 @@ function flipACoin(call1) {
   }
 
 // Start an app server
-var HTTP_PORT = 5000;
-const server = app.listen(HTTP_PORT, () => {
-  console.log("App listening on port %PORT%".replace("%PORT%", HTTP_PORT));
+const server = app.listen(port, () => {
+  console.log("App listening on port %PORT%".replace("%PORT%", port));
 });
 
 
