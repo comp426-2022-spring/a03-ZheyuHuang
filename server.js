@@ -69,7 +69,7 @@ app.get("/app/flips/:number", (req, res) => {
 app.get("/app/flip/call/:heads", (req, res) => {
     var flipObj = flipACoin(req.param.heads)
     Object.assign(flipObj, {call: "heads"})
-    res.status(200).json({ flipObj });
+    res.status(200).send(flipObj)
   });
 
   // Define default endpoint
