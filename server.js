@@ -28,6 +28,26 @@ function coinFlips(flips) {
   return results;
 }
 
+function countFlips(array) {
+
+  var object = {
+    heads : 0,
+    tails : 0
+  }
+
+  array.forEach(myFunction);
+
+  function myFunction(value, index, array){
+  
+    if (value == "heads"){
+      object["heads"] += 1;
+    }else{
+      object['tails'] += 1;
+    }
+  }
+  return (object)
+}
+
 function flipACoin(call1) {
     let call = call1;
     let flip = coinFlip();
@@ -64,7 +84,9 @@ app.get("/app/flip", (req, res) => {
   })
 
 app.get("/app/flips/:number", (req, res) => {
-  res.status(200).json({ "raw": coinFlips(req.params.number) });
+  var flipVar2 = coinFlips(req.params.number);
+  var flipVar3 = countFlips(flipVar2)
+  res.status(200).json({ "raw": flipVar2, 'summary': flipVar3 });
 });
 
 app.get("/app/flip/call/:heads", (req, res) => {
@@ -74,9 +96,9 @@ app.get("/app/flip/call/:heads", (req, res) => {
   });
 
   app.get("/app/flip/call/:tails", (req, res) => {
-    var flipObj = flipACoin(req.param.tails)
-    Object.assign(flipObj, {call: "tails"})
-    res.status(200).send(flipObj)
+    var flipObj2 = flipACoin(req.param.tails)
+    Object.assign(flipObj2, {call: "tails"})
+    res.status(200).send(flipObj2)
   });
 
   // Define default endpoint
