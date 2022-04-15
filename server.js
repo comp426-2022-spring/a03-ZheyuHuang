@@ -89,16 +89,12 @@ app.get("/app/flips/:number", (req, res) => {
   res.status(200).json({ "raw": flipVar2, 'summary': flipVar3 });
 });
 
-app.get("/app/flip/call/:heads", (req, res) => {
-    var flipObj = flipACoin(req.param.heads)
-    Object.assign(flipObj, {call: "heads"})
-    res.status(200).send(flipObj)
+app.get("/app/flip/call/heads", (req, res) => {
+    res.status(200).json(flipACoin("heads"));
   });
 
   app.get("/app/flip/call/:tails", (req, res) => {
-    var flipObj2 = flipACoin(req.param.tails)
-    Object.assign(flipObj2, {call: "tails"})
-    res.status(200).send(flipObj2)
+    res.status(200).json(flipACoin("tails"));
   });
 
   // Define default endpoint
