@@ -46,11 +46,6 @@ const server = app.listen(HTTP_PORT, () => {
   console.log("App listening on port %PORT%".replace("%PORT%", HTTP_PORT));
 });
 
-// Define default endpoint
-// Default response for any other request
-app.use(function (req, res) {
-  res.status(404).send("404 NOT FOUND");
-});
 
 // Define check endpoint
 app.get("/app/", (req, res) => {
@@ -71,3 +66,10 @@ app.get("/app/flip", (req, res) => {
     var flipVar = coinFlip()
     res.status(200).json({ 'flip' : flipVar });
   })
+
+  // Define default endpoint
+// Default response for any other request
+app.use(function (req, res) {
+    res.status(404).send("404 NOT FOUND");
+  });
+  
