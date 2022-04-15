@@ -66,6 +66,12 @@ app.get("/app/flips/:number", (req, res) => {
   res.status(200).json({ "raw": coinFlips(req.params.number) });
 });
 
+app.get("/app/flip/call/:heads", (req, res) => {
+    var flipObj = flipACoin(req.param.heads)
+    Object.assign(flipObj, {call: "heads"})
+    res.status(200).json({ flipObj });
+  });
+
   // Define default endpoint
 // Default response for any other request
 app.use(function (req, res) {
